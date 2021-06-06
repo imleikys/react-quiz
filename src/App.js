@@ -1,12 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Layout from './hoc/Layout/Layout';
+import Quiz from './containers/Quiz/Quiz';
 
-function App() {
-  return (
-    <div className="App">
-      
-    </div>
-  );
+class App extends React.Component {
+  render() {
+    return (
+      <Layout>
+        <Quiz />
+      </Layout>
+    ); 
+  }
 }
 
 export default App;
