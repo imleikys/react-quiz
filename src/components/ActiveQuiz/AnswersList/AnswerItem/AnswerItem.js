@@ -1,10 +1,17 @@
 import React from 'react';
-import classes from './AnswerItem.module.css';
+import styles from './AnswerItem.module.css';
 
 const AnswerItem = (props) => { 
+
+  const classes = [styles.AnswerItem];
+
+  if(props.state) {
+    classes.push(styles[props.state]);
+  }
+
   return(
     <li 
-      className={classes.AnswerItem} 
+      className={classes.join(' ')} 
       onClick={() => props.onAnswerClick(props.answer.id)}>
         {props.answer.text}
     </li>
