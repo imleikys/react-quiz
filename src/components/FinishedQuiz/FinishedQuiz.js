@@ -1,27 +1,38 @@
 import React from 'react';
-import classes from './FinishedQuiz.module.css';
+import styles from './FinishedQuiz.module.css';
 
 const FinishedQuiz = (props) => { 
+  const correctCount = Object.keys(props.results).reduce((total, key) => {
+    if (props.results[key] === 'correct') {
+      total++;
+    }
+
+    return total;
+  }, 0)
 
   return (
-    <div className={classes.FinishedQuiz}>
+    <div className={styles.FinishedQuiz}>
       <ul>
-        <li>
-          <strong>1. </strong>
-          How are you
-          <i className={'fa fa-times ' + classes.wrong}/>
-        </li>
-        <li>
-          <strong>1. </strong>
-          How are you
-          <i className={'fa fa-check ' + classes.correct}/>
-        </li>
+        {props.quiz.map((quizItem, index) => {
+          const classes = [
+            'fa', 
+            props.results[quizItem.id] === 'wrong' ? 'fa-times' : 'fa-check',
+            styles[props.results[quizItem.id]],
+          ]
+          return (
+            <li key={index}>
+              <strong>{index + 1}. </strong>
+              {quizItem.question}
+              <i className={classes.join(' ')}/>
+            </li>
+          )
+        })}
       </ul>
 
-      <p>Правильно 2 из 2</p>
+      <p>Правильно {correctCount} из {props.quiz.length}</p>
 
       <div>
-        <button>Повторить</button>
+        <button onClick={props.onRetry}>Повторить</button>
       </div>
     </div>
   );
