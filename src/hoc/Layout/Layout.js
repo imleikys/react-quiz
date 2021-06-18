@@ -31,8 +31,8 @@ export default class App extends Component {
         <MenuToggle 
           onToggle={this.toggleMenuHandler}
           isOpen={this.state.menu}
-
         />
+
         <main>
           {this.props.children}
         </main>
