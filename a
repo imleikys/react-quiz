@@ -1,0 +1,71 @@
+[33mcommit b56db9583f0333a863835d17a4ae103e35517de2[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: Danila Julev <daniljulev@gmail.com>
+Date:   Mon Jun 21 23:05:30 2021 +0300
+
+    finish with forms
+
+[33mcommit 080834e702cee959795c28984013ab6449f18855[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: Danila Julev <daniljulev@gmail.com>
+Date:   Mon Jun 21 16:18:43 2021 +0300
+
+    form validation and QuizCreator component
+
+[33mcommit e29c80cbd9b9daa2df43fe65276b77e3b3ac1a73[m
+Author: Danila Julev <daniljulev@gmail.com>
+Date:   Fri Jun 18 23:20:44 2021 +0300
+
+    working on Auth component
+
+[33mcommit 0f735b6c7c2bd18393791aec5e3a233d60e594cb[m
+Author: Danila Julev <daniljulev@gmail.com>
+Date:   Wed Jun 16 22:14:38 2021 +0300
+
+    simple routing
+
+[33mcommit c7920af405f925feb8b87b63b9dcdf0a0dbba231[m
+Author: Danila Julev <daniljulev@gmail.com>
+Date:   Fri Jun 11 23:44:04 2021 +0300
+
+    add menu
+
+[33mcommit e491a90698cca25539fff1f1950ac02df8003e5d[m
+Author: Danila Julev <daniljulev@gmail.com>
+Date:   Thu Jun 10 23:02:11 2021 +0300
+
+    almost finish with FinishedQuiz component
+
+[33mcommit 75d2cbb431b085c6313d295bb34a46b17a575f43[m
+Author: Danila Julev <daniljulev@gmail.com>
+Date:   Tue Jun 8 23:39:30 2021 +0300
+
+    continue working on quiz app
+
+[33mcommit 4ffd2b78a40acee9eefa7034516a29a0c1f770a9[m
+Author: Danila Julev <daniljulev@gmail.com>
+Date:   Tue Jun 8 12:38:15 2021 +0300
+
+    add coloring answers
+
+[33mcommit 5c1c6800e331dc400cf2caae8f1911a9aea1bcfa[m
+Author: Danila Julev <daniljulev@gmail.com>
+Date:   Mon Jun 7 23:59:22 2021 +0300
+
+    basic quiz logic
+
+[33mcommit 868068bdca388dc9e3665de316757cd439e2a83f[m
+Author: Danila Julev <daniljulev@gmail.com>
+Date:   Mon Jun 7 00:45:26 2021 +0300
+
+    start working on basic logic
+
+[33mcommit 609b1e2762ad3b277f1bf08fdd8f268a057628a5[m
+Author: Danila Julev <daniljulev@gmail.com>
+Date:   Sun Jun 6 23:40:05 2021 +0300
+
+    initialization
+
+[33mcommit 1b33eb13224e2ad74deb51929aa704e9d4ab6f8d[m
+Author: Danila Julev <daniljulev@gmail.com>
+Date:   Sun Jun 6 23:18:01 2021 +0300
+
+    Initialize project using Create React App

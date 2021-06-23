@@ -2,6 +2,9 @@ import React, {Component} from 'react';
 import classes from './Quiz.module.css';
 import ActiveQuiz from '../../components/ActiveQuiz/ActiveQuiz';
 import FinishedQuiz from '../../components/FinishedQuiz/FinishedQuiz';
+import axios from '../../axios/axios-quiz';
+import Loader from '../../components/UI/Loader/Loader';
+
 
 export default class Quiz extends Component {
   state = { 
@@ -9,30 +12,8 @@ export default class Quiz extends Component {
     isFinished: false,
     activeQuestion: 0,
     answerState: null,
-    quiz: [
-      {
-        question: 'Какого цвета небо?',
-        rightAnswerId: 2,
-        id: 1,
-        answers: [
-          {text: 'Чёрное', id: 1},
-          {text: 'Синее', id: 2},
-          {text: 'Красное', id: 3},
-          {text: 'Зелёное', id:4},
-        ]
-      },
-      {
-        question: 'Кто такой Егор Летов?',
-        rightAnswerId: 1,
-        id: 2,
-        answers: [
-          {text: 'Музыкант', id: 1},
-          {text: 'Актёр', id: 2},
-          {text: 'Шафёр', id: 3},
-          {text: 'Футболист', id:4},
-        ]
-      }
-    ],
+    quiz: [],
+    loading: true,
   }
 
   onAnswerClickHandler = (answerId) => {
@@ -93,7 +74,19 @@ export default class Quiz extends Component {
     })
   }
 
-  componentDidMount() {
+  async componentDidMount() {
+    try {
+      const response = await axios(`/quizes/${this.props.match.params.id}.json`);
+      const quiz = response.data;
+
+      this.setState({
+        quiz, loading: false
+      })
+
+    } catch (e) {
+      console.warn(e);
+    }
+
     console.log('Quiz ID: ' + this.props.match.params.id);
   }
 
@@ -104,7 +97,9 @@ export default class Quiz extends Component {
           <h1>Ответьте на все вопросы</h1> 
 
           {
-            this.state.isFinished 
+            this.state.loading ? 
+              <Loader /> : 
+              this.state.isFinished 
               ? <FinishedQuiz 
                   results={this.state.results}
                   quiz={this.state.quiz}
